@@ -42,7 +42,6 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        {/* Theme Toggle */}
         <label className="toggle text-base-content">
           <input
             type="checkbox"

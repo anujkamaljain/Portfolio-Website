@@ -1,4 +1,3 @@
-// src/components/Timeline.jsx
 import { motion } from "framer-motion";
 
 const timelineData = [
@@ -12,7 +11,7 @@ const timelineData = [
     year: "2023",
     title: "Gave JEE & Completed my 12th",
     description:
-      "Completed 12th grade from Sri Guru Harkrishan Public School with 79% in the Science stream (PCM). Also appeared for JEE Mains and achieved a 97 Percentile, reinforcing my dedication towards pursuing engineering and technology.",
+      "Completed 12th grade from Sri Guru Harkrishan Public School with 78% in the Science stream (PCM). Also appeared for JEE Mains and achieved a 97 Percentile, reinforcing my dedication towards pursuing engineering and technology.",
   },
   {
     year: "2024",
