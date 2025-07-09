@@ -15,7 +15,7 @@ const Experience = () => {
         >
           Experience
         </motion.h1>
-        <div className="md:flex-row items-center justify-around mt-5 sm:mt-15 ">
+        <div className="md:flex-row items-center justify-around mt-5 sm:mt-15">
           <ExperienceCard
             name={"Altruist Technologies Pvt. Ltd."}
             title={"Technical Intern"}

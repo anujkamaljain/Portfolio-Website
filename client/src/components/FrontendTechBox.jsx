@@ -10,7 +10,12 @@ import { motion } from "framer-motion";
 
 const FrontendTechBox = () => {
   return (
-    <div className="my-4 text-center py-10 px-7 rounded-3xl bg-transparent shadow-xl w-full max-w-sm sm:max-w-md md:max-w-full mx-auto">
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      className="my-4 text-center py-10 px-7 rounded-3xl bg-transparent shadow-xl w-full max-w-sm sm:max-w-md md:max-w-full mx-auto"
+    >
       <motion.h1 className="text-3xl font-extrabold font-serif text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-8">
         My Frontend Toolbox
       </motion.h1>
@@ -119,7 +124,7 @@ const FrontendTechBox = () => {
           <span className="ml-3 font-semibold text-lg">Framer Motion</span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

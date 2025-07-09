@@ -1,5 +1,5 @@
 import { FaBuilding } from "react-icons/fa6"; // you can swap this with any other icon
-import { motion } from "framer-motion";
+import { easeIn, motion } from "framer-motion";
 
 const ExperienceCard = ({
   name,
@@ -8,14 +8,21 @@ const ExperienceCard = ({
   dateEnd,
   info,
   techstack,
-  location
+  location,
 }) => {
   return (
     <motion.div
-      whileHover={{ scale: 1.03 }}
+      initial={{ opacity: 0, x: 10 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1 }}
       className="rounded-2xl p-5 bg-white/5 backdrop-blur-md shadow-xl border border-white/10 max-w-md w-full transition-all"
     >
-      <div className="flex items-start gap-4">
+      <motion.div
+        initial={{ opacity: 0, x: -10 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
+        className="flex items-start gap-4"
+      >
         <div className="bg-cyan-600 p-3 rounded-xl">
           <FaBuilding size={24} />
         </div>
@@ -26,13 +33,18 @@ const ExperienceCard = ({
           <p className="text-sm text-gray-500">
             {dateStart} – {dateEnd}
           </p>
-          <p className="text-sm text-gray-500">
-            {location}
-          </p>
+          <p className="text-sm text-gray-500">{location}</p>
         </div>
-      </div>
+      </motion.div>
 
-      <p className="mt-4 text-gray-500 text-sm">{info}</p>
+      <motion.p
+        initial={{ opacity: 0, x: -10 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
+        className="mt-4 text-gray-500 text-sm"
+      >
+        {info}
+      </motion.p>
 
       <div className="flex flex-wrap gap-2 mt-4">
         {techstack.map((tech) => (
