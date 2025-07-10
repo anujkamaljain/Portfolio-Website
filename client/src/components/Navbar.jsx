@@ -1,10 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { easeInOut, motion } from "framer-motion";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") || "pureriver";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+    setIsDarkMode(savedTheme === "dark");
+  }, []);
+
+  const handleThemeToggle = (checked) => {
+    const newTheme = checked ? "dark" : "pureriver";
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+    setIsDarkMode(checked);
+  };
 
   return (
     <div className="navbar bg-base-200 shadow-sm border-b border-base-300 sticky top-0 z-50 px-4 flex justify-around">
@@ -46,13 +60,10 @@ const Navbar = () => {
           <input
             type="checkbox"
             className="theme-controller"
-            onChange={(e) =>
-              document.documentElement.setAttribute(
-                "data-theme",
-                e.target.checked ? "dark" : "pureriver"
-              )
-            }
+            checked={isDarkMode}
+            onChange={(e) => handleThemeToggle(e.target.checked)}
           />
+
           <svg
             aria-label="sun"
             xmlns="http://www.w3.org/2000/svg"
@@ -69,6 +80,7 @@ const Navbar = () => {
               <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
             </g>
           </svg>
+
           <svg
             aria-label="moon"
             xmlns="http://www.w3.org/2000/svg"
@@ -102,13 +114,10 @@ const Navbar = () => {
           <input
             type="checkbox"
             className="theme-controller"
-            onChange={(e) =>
-              document.documentElement.setAttribute(
-                "data-theme",
-                e.target.checked ? "dark" : "pureriver"
-              )
-            }
+            checked={isDarkMode}
+            onChange={(e) => handleThemeToggle(e.target.checked)}
           />
+
           <svg
             aria-label="sun"
             xmlns="http://www.w3.org/2000/svg"
@@ -125,6 +134,7 @@ const Navbar = () => {
               <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
             </g>
           </svg>
+
           <svg
             aria-label="moon"
             xmlns="http://www.w3.org/2000/svg"
@@ -142,6 +152,7 @@ const Navbar = () => {
           </svg>
         </label>
       </div>
+
       {isOpen && (
         <div className="absolute top-full left-0 w-full bg-base-200 shadow-md border-t border-base-300 md:hidden z-40">
           <ul className="menu menu-vertical px-4 py-2">

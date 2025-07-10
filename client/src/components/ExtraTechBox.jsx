@@ -7,6 +7,10 @@ import {
 } from "react-icons/si";
 import { GiDaisy } from "react-icons/gi"; // best visual match
 import { motion } from "framer-motion";
+import { FaProjectDiagram, FaNetworkWired } from "react-icons/fa";
+import { GrDatabase } from "react-icons/gr";
+import { FaMicrochip } from "react-icons/fa6";
+import { SiLeetcode } from "react-icons/si";
 
 const ExtraTechBox = () => {
   return (
@@ -17,7 +21,7 @@ const ExtraTechBox = () => {
       className="my-4 text-center py-10 px-7 rounded-3xl bg-transparent shadow-xl w-full max-w-sm sm:max-w-md md:max-w-full mx-auto"
     >
       <motion.h1 className="text-3xl font-extrabold font-serif text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-8">
-        My Extra Toolbox
+        My Extra Toolbox & Core Subjects
       </motion.h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 place-items-center">
@@ -69,6 +73,55 @@ const ExtraTechBox = () => {
             <SiCplusplus size={24} />
           </motion.div>
           <span className="ml-3 font-semibold text-lg">C++</span>
+        </div>
+        <div className="btn w-full h-16 justify-start bg-gradient-to-r from-pink-600 to-rose-500 text-white shadow-lg hover:scale-105 transition duration-300 ease-in-out rounded-2xl">
+          <motion.div
+            animate={{ scale: [1, 1.1, 1] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+          >
+            <FaMicrochip size={24} />
+          </motion.div>
+          <span className="ml-3 font-semibold text-lg">Operating System</span>
+        </div>
+
+        <div className="btn w-full h-16 justify-start bg-gradient-to-r from-blue-700 to-cyan-500 text-white shadow-lg hover:scale-105 transition duration-300 ease-in-out rounded-2xl">
+          <motion.div
+            animate={{ scale: [1, 1.1, 1] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+          >
+            <FaNetworkWired size={24} />
+          </motion.div>
+          <span className="ml-3 font-semibold text-lg">Computer Networks</span>
+        </div>
+
+        <div className="btn w-full h-16 justify-start bg-gradient-to-r from-green-700 to-emerald-500 text-white shadow-lg hover:scale-105 transition duration-300 ease-in-out rounded-2xl">
+          <motion.div
+            animate={{ scale: [1, 1.1, 1] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+          >
+            <GrDatabase size={24} />
+          </motion.div>
+          <span className="ml-3 font-semibold text-lg">DBMS</span>
+        </div>
+
+        <div className="btn w-full h-16 justify-start bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg hover:scale-105 transition duration-300 ease-in-out rounded-2xl">
+          <motion.div
+            animate={{ scale: [1, 1.1, 1] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+          >
+            <FaProjectDiagram size={24} />
+          </motion.div>
+          <span className="ml-3 font-semibold text-lg">OOPs</span>
+        </div>
+
+        <div className="btn w-full h-16 justify-start bg-gradient-to-r from-yellow-500 to-amber-400 text-white shadow-lg hover:scale-105 transition duration-300 ease-in-out rounded-2xl">
+          <motion.div
+            animate={{ scale: [1, 1.1, 1] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+          >
+            <SiLeetcode size={24} />
+          </motion.div>
+          <span className="ml-3 font-semibold text-lg">DSA</span>
         </div>
       </div>
     </motion.div>

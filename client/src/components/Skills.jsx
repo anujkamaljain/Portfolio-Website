@@ -13,7 +13,7 @@ const Skills = () => {
     >
       <motion.section className="bg-base-100/30 dark:bg-base-200/30 shadow-sm shadow-primary rounded-3xl backdrop-blur-xs border border-base-300 p-6 sm:p-8 gap-10 w-full max-w-screen-xl">
         <motion.h1
-          className="text-2xl mb-10 mt-5 text-primary text-center underline"
+          className="text-3xl mb-10 mt-5 text-primary text-center underline"
           style={{ fontFamily: "'Bowlby One SC', sans-serif" }}
         >
           Skills & Technologies
