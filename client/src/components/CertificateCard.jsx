@@ -15,14 +15,17 @@ const CertificateCard = ({
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+      className="will-change-transform"
     >
-      <div className="border border-primary card w-full mt-4 bg-transparent shadow-md hover:shadow-xl transition-shadow duration-300 rounded-2xl">
+      <div className="border border-primary card w-full mt-4 bg-transparent shadow-md hover:shadow-md transition duration-200 rounded-2xl">
         <figure className="p-3">
           <img
             src={source}
             alt={alter}
-            className="rounded-xl object-cover h-48 w-full"
+            className="rounded-xl object-contain h-48 w-full"
+            loading="lazy"
           />
         </figure>
         <div className="card-body text-gray-500">

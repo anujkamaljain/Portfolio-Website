@@ -23,22 +23,20 @@ const LetsConnect = () => {
         "template_35vr7cm",
         {
           from_name: form.name,
+          from_email: form.email,
           subject: form.subject,
           message: form.message,
-          reply_to: form.email,
         },
         "8Kmun5zjZWkEXiLeX"
       )
-      .then(
-        () => {
-          alert("Message sent successfully!");
-          setForm({ email: "", subject: "", message: "", name: "" });
-        },
-        (error) => {
-          alert("Failed to send message. Try again later.");
-          console.log(error);
-        }
-      );
+      .then(() => {
+        alert("✅ Message sent successfully!");
+        setForm({ email: "", subject: "", message: "", name: "" });
+      })
+      .catch((err) => {
+        alert("❌ Failed to send message. Try again later.");
+        console.error(err);
+      });
   };
 
   return (
@@ -51,7 +49,9 @@ const LetsConnect = () => {
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.2 }}
       >
+        {/* Contact Form */}
         <div className="w-full md:w-1/2">
           <h1
             className="text-3xl mb-6 text-primary text-center underline"
@@ -60,44 +60,20 @@ const LetsConnect = () => {
             Contact Me
           </h1>
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label className="label">Name</label>
-              <input
-                type="text"
-                name="name"
-                className="input input-bordered w-full"
-                placeholder="Your Name"
-                onChange={handleChange}
-                value={form.name}
-                required
-              />
-            </div>
-
-            <div>
-              <label className="label">Email</label>
-              <input
-                type="email"
-                name="email"
-                className="input input-bordered w-full"
-                placeholder="Your Email"
-                onChange={handleChange}
-                value={form.email}
-                required
-              />
-            </div>
-
-            <div>
-              <label className="label">Subject</label>
-              <input
-                type="text"
-                name="subject"
-                className="input input-bordered w-full"
-                placeholder="Subject"
-                onChange={handleChange}
-                value={form.subject}
-                required
-              />
-            </div>
+            {["name", "email", "subject"].map((field) => (
+              <div key={field}>
+                <label className="label capitalize">{field}</label>
+                <input
+                  type={field === "email" ? "email" : "text"}
+                  name={field}
+                  className="input input-bordered w-full"
+                  placeholder={`Your ${field}`}
+                  value={form[field]}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+            ))}
 
             <div>
               <label className="label">Message</label>
@@ -111,22 +87,24 @@ const LetsConnect = () => {
               />
             </div>
 
-            <button className="btn btn-neutral w-full mt-4" type="submit">
+            <button type="submit" className="btn btn-neutral w-full mt-4">
               Send Message
             </button>
           </form>
         </div>
+
+        {/* Info + Icons */}
         <motion.div
           className="w-full md:w-1/2 bg-base-200/30 border border-base-300 rounded-2xl p-6 shadow-inner text-center space-y-4"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3 }}
+          viewport={{ once: true, amount: 0.2 }}
         >
           <h2 className="text-xl font-bold">Let's Get in Touch</h2>
           <p className="text-sm">
-            I'm currently open to freelance, internships, or just a good dev
-            chat. Feel free to reach out through the form or connect via social
-            links.
+            I'm open to freelance, internships, or just a good dev chat. Reach
+            out through the form or connect via links below.
           </p>
 
           <div className="flex justify-center gap-6 text-2xl mt-4 text-primary">
@@ -135,6 +113,7 @@ const LetsConnect = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:scale-110 transition-transform"
+              style={{ willChange: "transform" }}
             >
               <FaLinkedin />
             </a>
@@ -143,13 +122,18 @@ const LetsConnect = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:scale-110 transition-transform"
+              style={{ willChange: "transform" }}
             >
               <FaGithub />
             </a>
-            <div className="tooltip tooltip-primary" data-tip="anujkamaljain1234@gmail.com">
+            <div
+              className="tooltip tooltip-primary"
+              data-tip="anujkamaljain1234@gmail.com"
+            >
               <a
                 href="mailto:anujkamaljain1234@gmail.com"
                 className="hover:scale-110 transition-transform"
+                style={{ willChange: "transform" }}
               >
                 <FaEnvelope />
               </a>
@@ -158,16 +142,14 @@ const LetsConnect = () => {
               <a
                 href="tel:+919499166336"
                 className="hover:scale-110 transition-transform"
-                title="Call Me"
+                style={{ willChange: "transform" }}
               >
                 <FaPhoneAlt />
               </a>
             </div>
           </div>
 
-          <p className="text-sm mt-4">
-            🕒 Replies within 24 hours
-          </p>
+          <p className="text-sm mt-4">🕒 Replies within 24 hours</p>
         </motion.div>
       </motion.section>
     </div>

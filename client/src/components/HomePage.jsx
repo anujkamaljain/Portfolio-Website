@@ -11,15 +11,14 @@ const HomePage = () => {
       className="w-full snap-start pt-10 flex items-center justify-center scroll-mt-20 px-4"
       id="home"
     >
-      <motion.section
-        className="flex flex-col-reverse md:flex-row items-center justify-between bg-base-100/30 dark:bg-base-200/30 shadow-sm shadow-primary rounded-3xl backdrop-blur-xs border border-base-300 p-6 sm:p-8 gap-10 w-full max-w-screen-xl"
-      >
+      <motion.section className="flex flex-col-reverse md:flex-row items-center justify-between bg-base-100/30 dark:bg-base-200/30 shadow-sm shadow-primary rounded-3xl backdrop-blur-xs border border-base-300 p-6 sm:p-8 gap-10 w-full max-w-screen-xl">
         <div className="flex flex-col justify-center items-start space-y-6 md:space-y-8 max-w-2xl w-full">
           <motion.span
-            className="text-sm tracking-wide uppercase text-primary animate-bounce"
+            className="text-sm tracking-wide uppercase text-primary"
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.2, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
           >
             WELCOME TO MY PORTFOLIO ✨
           </motion.span>
@@ -28,10 +27,16 @@ const HomePage = () => {
             className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.4, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
           >
             Hi, I'm{" "}
-            <motion.span className="text-primary animate-pulse">
+            <motion.span
+              className="text-primary"
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ repeat: Infinity, duration: 2 }}
+              style={{ display: "inline-block", willChange: "transform" }}
+            >
               Anuj Kamal Jain
             </motion.span>
             <br />
@@ -43,14 +48,14 @@ const HomePage = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
           >
             <img
               src={profileImage}
               alt="Anuj Avatar"
               className="w-full h-full object-cover rounded-full shadow-xl border-4 border-primary"
             />
-
-            <div className=" w-full absolute -bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-5 px-3 py-1 rounded-full bg-base-200/60 backdrop-blur-md shadow border border-base-300">
+            <div className="w-full absolute -bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-5 px-3 py-1 rounded-full bg-base-200/60 backdrop-blur-md shadow border border-base-300">
               <span
                 className="w-2 h-2 rounded-full bg-green-400"
                 style={{
@@ -68,7 +73,8 @@ const HomePage = () => {
             className="text-base-content/80 text-sm sm:text-base mt-4 md:mt-0"
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
+            transition={{ delay: 0.6, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
           >
             I specialize in crafting robust, end-to-end web applications that
             combine intuitive user experiences with powerful back-end
@@ -80,7 +86,8 @@ const HomePage = () => {
             className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
+            transition={{ delay: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
           >
             <a
               href="#projects"
@@ -101,7 +108,8 @@ const HomePage = () => {
             className="flex justify-center sm:justify-start items-center gap-4 w-full"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1 }}
+            transition={{ delay: 1, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
           >
             <a
               className="btn btn-circle bg-base-100/10 border border-base-content/20 text-primary hover:text-accent hover:translate-y-0.5 transition-all duration-100 ease-in"
@@ -129,13 +137,13 @@ const HomePage = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.2 }}
         >
           <img
             src={profileImage}
             alt="Anuj Avatar"
             className="w-full h-full object-cover rounded-full shadow-xl border-4 border-primary"
           />
-
           <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-1 rounded-full bg-base-200/60 backdrop-blur-md shadow border border-base-300">
             <span
               className="w-3 h-3 rounded-full bg-green-400"
@@ -148,7 +156,6 @@ const HomePage = () => {
               Actively looking for opportunities
             </span>
           </div>
-
           <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-primary/30 to-accent/30 blur-2xl opacity-50 animate-pulse"></div>
         </motion.div>
       </motion.section>

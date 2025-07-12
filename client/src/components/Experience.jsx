@@ -8,9 +8,19 @@ const Experience = () => {
       className="w-full snap-start pt-10 flex items-center justify-center scroll-mt-20 px-4"
       id="experience"
     >
-      <motion.section className="bg-base-100/30 dark:bg-base-200/30 shadow-sm shadow-primary rounded-3xl backdrop-blur-xs border border-base-300 p-6 sm:p-8 gap-10 w-full max-w-screen-xl min-h-screen">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.2 }}
+        className="bg-base-100/30 dark:bg-base-200/30 shadow-sm shadow-primary rounded-3xl backdrop-blur-xs border border-base-300 p-6 sm:p-8 gap-10 w-full max-w-screen-xl min-h-screen will-change-transform"
+      >
         <motion.h1
-          className="text-3xl mb-10 mt-5 text-primary text-center underline"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+          viewport={{ once: true }}
+          className="text-3xl mb-10 mt-5 text-primary text-center underline will-change-transform"
           style={{ fontFamily: "'Bowlby One SC', sans-serif" }}
         >
           Experience

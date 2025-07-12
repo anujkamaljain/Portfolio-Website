@@ -23,7 +23,7 @@ const timelineData = [
     year: "2025",
     title: "Completed 2nd Year & Landed an Internship",
     description:
-      'Completed 2nd year with a SGPA of "7.39" in the 3rd semester and "8.10" in the 4th semester, resulting in a cumulative CGPA of "7.20". while I am sharpening my full-stack development and DSA skills. Successfully landed an internship at Altruist Technologies Pvt. Ltd. as Technical Intern working with web development team — marking the start of my professional journey.',
+      'Completed 2nd year with a SGPA of "7.39" in the 3rd semester and "8.10" in the 4th semester, resulting in a cumulative CGPA of "7.20". While sharpening my full-stack development and DSA skills, I successfully landed an internship at Altruist Technologies Pvt. Ltd. as a Technical Intern working with the web development team — marking the start of my professional journey.',
   },
 ];
 
@@ -45,7 +45,7 @@ const Timeline = () => {
           custom={idx}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={fadeInUp}
         >
           {idx !== 0 && <hr className="mb-4" />}
@@ -56,6 +56,7 @@ const Timeline = () => {
                 viewBox="0 0 20 20"
                 fill="currentColor"
                 className="h-5 w-5"
+                aria-hidden="true"
               >
                 <path
                   fillRule="evenodd"
@@ -81,7 +82,6 @@ const Timeline = () => {
               {item.description}
             </p>
           </div>
-          <hr />
         </motion.li>
       ))}
     </ul>
