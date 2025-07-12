@@ -111,7 +111,7 @@ const ExtraTechBox = () => {
           >
             <FaProjectDiagram size={24} />
           </motion.div>
-          <span className="ml-3 font-semibold text-lg">OOPs</span>
+          <span className="ml-3 font-semibold text-lg">OOP</span>
         </div>
 
         <div className="btn w-full h-16 justify-start bg-gradient-to-r from-yellow-500 to-amber-400 text-white shadow-lg hover:scale-105 transition duration-300 ease-in-out rounded-2xl">
