@@ -32,7 +32,7 @@ const FrontendTechBox = () => {
           <div className="ml-3 text-white font-semibold text-lg">HTML</div>
         </div>
 
-        <div className="w-full max-w-xs min-w-[160px] h-16 rounded-2xl flex items-center px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-400 shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+        <div className="w-full max-w-xs min-w-[160px] h-16 rounded-2xl flex items-center px-4 py-2 bg-gradient-to-l from-blue-500 to-cyan-400 shadow-lg hover:scale-105 transition duration-300 ease-in-out">
           <motion.div
             animate={{ y: [0, -4, 0] }}
             transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
