@@ -10,6 +10,7 @@ const Education = lazy(() => import("./Education"));
 const LetsConnect = lazy(() => import("./LetsConnect"));
 const Footer = lazy(() => import("./Footer"));
 import GlowingDotsBackground from "./GlowingDotsBackground";
+import ScrollToTopButton from "./ScrollToTop";
 
 const MainPage = () => {
   return (
@@ -31,6 +32,7 @@ const MainPage = () => {
         <LetsConnect />
         <Footer />
       </Suspense>
+      <ScrollToTopButton />
     </div>
   );
 };
