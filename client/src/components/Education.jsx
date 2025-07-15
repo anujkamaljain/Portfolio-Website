@@ -53,7 +53,7 @@ const Education = () => {
             dateEnd="2023"
             info="Non-Medical (Science), CBSE"
             location="Patiala"
-            cgpa="78%"
+            cgpa="76.6%"
             Logo={FaUniversity}
             gpa="Percentage"
           />
@@ -63,7 +63,7 @@ const Education = () => {
             dateEnd="2021"
             info="Primary and Secondary Education, CBSE"
             location="Ambala Cantt"
-            cgpa="97%"
+            cgpa="97.2%"
             Logo={FaUniversity}
             gpa="Percentage"
           />

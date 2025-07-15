@@ -5,13 +5,13 @@ const timelineData = [
     year: "2021",
     title: "Completed my 10th",
     description:
-      "Successfully completed my 10th grade from Cecil Convent School with a strong academic foundation. This year marked the beginning of my interest in Science and Technology. I scored 97% in my 10th Grade.",
+      "Successfully completed my 10th grade from Cecil Convent School with a strong academic foundation. This year marked the beginning of my interest in Science and Technology. I scored 97.2% in my 10th Grade.",
   },
   {
     year: "2023",
     title: "Gave JEE & Completed my 12th",
     description:
-      "Completed 12th grade from Sri Guru Harkrishan Public School with 78% in the Science stream (PCM). Also appeared for JEE Mains and achieved a 97 Percentile, reinforcing my dedication towards pursuing engineering and technology.",
+      "Completed 12th grade from Sri Guru Harkrishan Public School with 76.6% in the Science stream (PCM). Also appeared for JEE Mains and achieved a 97 Percentile, reinforcing my dedication towards pursuing engineering and technology.",
   },
   {
     year: "2024",
