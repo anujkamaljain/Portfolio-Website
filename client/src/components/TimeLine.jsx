@@ -48,7 +48,6 @@ const Timeline = () => {
           viewport={{ once: true, amount: 0.2 }}
           variants={fadeInUp}
         >
-          {idx !== 0 && <hr className="mb-4" />}
           <div className="timeline-middle">
             <div className="bg-primary text-white p-2 rounded-full shadow-md animate-pulse">
               <svg
@@ -82,6 +81,7 @@ const Timeline = () => {
               {item.description}
             </p>
           </div>
+          <hr />
         </motion.li>
       ))}
     </ul>
