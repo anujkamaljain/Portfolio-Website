@@ -20,7 +20,9 @@ const MainPage = () => {
       <HomePage />
       <Suspense
         fallback={
-          <span className="loading loading-dots loading-xl text-center flex items-center justify-center"></span>
+          <div className="w-full h-screen flex items-center justify-center">
+            <span className="loading loading-dots loading-xl"></span>
+          </div>
         }
       >
         <AboutMe />
