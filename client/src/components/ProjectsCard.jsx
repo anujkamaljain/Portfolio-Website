@@ -2,16 +2,24 @@ import React from "react";
 import { SiGithub } from "react-icons/si";
 import { motion } from "framer-motion";
 
-const ProjectsCard = ({ source, alter, title, body, link }) => {
+// Smooth spring animation preset
+const smoothSpring = {
+  type: "spring",
+  stiffness: 100,
+  damping: 15,
+  mass: 0.5,
+};
+
+const ProjectsCard = ({ source, alter, title, body, link, badge }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10 }}
+      initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true, amount: 0.2 }}
-      className="will-change-transform"
+      transition={{ ...smoothSpring }}
+      viewport={{ once: true, amount: 0.1 }}
+      className="will-change-transform h-full"
     >
-      <div className="border border-primary card w-full mt-4 bg-base-100/20 backdrop-blur-md shadow-md hover:shadow-xl transition-shadow duration-300 rounded-2xl">
+      <div className="border border-primary card w-full h-full max-h-[420px] bg-base-100/20 backdrop-blur-md shadow-md hover:shadow-xl transition-shadow duration-300 rounded-2xl flex flex-col">
         <figure className="p-4">
           <img
             src={source}
@@ -20,14 +28,16 @@ const ProjectsCard = ({ source, alter, title, body, link }) => {
             className="rounded-xl object-cover h-48 w-full"
           />
         </figure>
-        <div className="card-body text-gray-600">
+        <div className="card-body text-gray-600 flex-1 flex flex-col">
           <h2 className="card-title font-semibold text-lg text-blue-800">
             {title}
-            <div className="badge bg-gradient-to-r from-indigo-500 to-blue-400 text-white shadow-sm">
-              NEW
-            </div>
+            {badge && (
+              <div className="badge bg-gradient-to-r from-indigo-500 to-blue-400 text-white shadow-sm">
+                {badge}
+              </div>
+            )}
           </h2>
-          <p className="text-sm leading-relaxed">{body}</p>
+          <p className="text-sm leading-relaxed line-clamp-3 flex-1">{body}</p>
           <div className="card-actions justify-end mt-4">
             <a
               href={link}

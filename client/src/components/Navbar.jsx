@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { easeInOut, motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+
+// Smooth spring animation presets
+const smoothSpring = {
+  type: "spring",
+  stiffness: 120,
+  damping: 14,
+};
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 
@@ -25,18 +32,18 @@ const Navbar = () => {
       <motion.a
         href="#home"
         className="flex justify-center items-center rounded-lg"
-        initial={{ x: -218 }}
-        animate={{ x: 0 }}
-        transition={{ duration: 0.5, ease: easeInOut }}
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ ...smoothSpring, delay: 0.1 }}
       >
         <p className="text-xl font-bold">Anuj Kamal Jain</p>
       </motion.a>
 
       <motion.div
         className="hidden md:flex items-center gap-4"
-        initial={{ x: 218 }}
-        animate={{ x: 0 }}
-        transition={{ duration: 0.5, ease: easeInOut }}
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ ...smoothSpring, delay: 0.15 }}
       >
         <ul className="menu menu-horizontal px-1">
           {[
@@ -153,28 +160,36 @@ const Navbar = () => {
         </label>
       </div>
 
-      {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-base-200 shadow-md border-t border-base-300 md:hidden z-40">
-          <ul className="menu menu-vertical px-4 py-2">
-            {[
-              "home",
-              "about-me",
-              "skills",
-              "experience",
-              "projects",
-              "certificates",
-              "education",
-              "contact",
-            ].map((section) => (
-              <li key={section} onClick={() => setIsOpen(false)}>
-                <a className="font-semibold capitalize" href={`#${section}`}>
-                  {section.replace("-", " ")}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="absolute top-full left-0 w-full bg-base-200 shadow-md border-t border-base-300 md:hidden z-40"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
+          >
+            <ul className="menu menu-vertical px-4 py-2">
+              {[
+                "home",
+                "about-me",
+                "skills",
+                "experience",
+                "projects",
+                "certificates",
+                "education",
+                "contact",
+              ].map((section) => (
+                <li key={section} onClick={() => setIsOpen(false)}>
+                  <a className="font-semibold capitalize" href={`#${section}`}>
+                    {section.replace("-", " ")}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

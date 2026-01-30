@@ -8,12 +8,21 @@ import {
 } from "react-icons/si";
 import { motion } from "framer-motion";
 
+// Smooth spring animation preset
+const smoothSpring = {
+  type: "spring",
+  stiffness: 100,
+  damping: 15,
+  mass: 0.5,
+};
+
 const FrontendTechBox = () => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10 }}
+      initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
+      transition={{ ...smoothSpring }}
+      viewport={{ once: true, amount: 0.1 }}
       className="my-4 text-center py-10 px-7 rounded-3xl bg-transparent shadow-xl w-full max-w-sm sm:max-w-md md:max-w-full mx-auto"
     >
       <motion.h1 className="text-3xl font-extrabold font-serif text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-8">

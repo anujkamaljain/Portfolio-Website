@@ -5,6 +5,21 @@ import { FaGithub } from "react-icons/fa";
 import { LiaLinkedinIn } from "react-icons/lia";
 import { GiOwl } from "react-icons/gi";
 
+// Smooth spring transition presets
+const smoothSpring = {
+  type: "spring",
+  stiffness: 100,
+  damping: 15,
+  mass: 0.5,
+};
+
+const gentleSpring = {
+  type: "spring",
+  stiffness: 80,
+  damping: 20,
+  mass: 0.8,
+};
+
 const HomePage = () => {
   return (
     <div
@@ -17,7 +32,7 @@ const HomePage = () => {
             className="text-sm tracking-wide uppercase text-primary"
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, ease: "easeOut" }}
+            transition={{ ...smoothSpring, delay: 0.1 }}
             viewport={{ once: true, amount: 0.2 }}
           >
             WELCOME TO MY PORTFOLIO ✨
@@ -27,14 +42,18 @@ const HomePage = () => {
             className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, ease: "easeOut" }}
+            transition={{ ...gentleSpring, delay: 0.2 }}
             viewport={{ once: true, amount: 0.2 }}
           >
             Hi, I'm{" "}
             <motion.span
               className="text-primary"
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ repeat: Infinity, duration: 2 }}
+              animate={{ scale: [1, 1.03, 1] }}
+              transition={{
+                repeat: Infinity,
+                duration: 2.5,
+                ease: [0.4, 0, 0.2, 1]
+              }}
               style={{ display: "inline-block", willChange: "transform" }}
             >
               Anuj Kamal Jain
@@ -47,7 +66,7 @@ const HomePage = () => {
             className="w-40 h-40 sm:w-56 sm:h-56 relative md:hidden self-center"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ ...gentleSpring, delay: 0.3 }}
             viewport={{ once: true, amount: 0.2 }}
           >
             <img
@@ -73,20 +92,17 @@ const HomePage = () => {
             className="text-base-content/80 text-sm sm:text-base mt-4 md:mt-0"
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, ease: "easeOut" }}
+            transition={{ ...smoothSpring, delay: 0.3 }}
             viewport={{ once: true, amount: 0.2 }}
           >
-            I specialize in crafting robust, end-to-end web applications that
-            combine intuitive user experiences with powerful back-end
-            functionality. With a focus on responsive design, scalable
-            architectures, and modern technologies.
+            I specialize in building responsive and user-centric web applications using React.js, Redux Toolkit, and Tailwind CSS. On the backend, I work with Node.js, Express.js, and MongoDB to develop scalable solutions. Passionate about solving real-world problems through technology.
           </motion.p>
 
           <motion.div
             className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, ease: "easeOut" }}
+            transition={{ ...gentleSpring, delay: 0.4 }}
             viewport={{ once: true, amount: 0.2 }}
           >
             <a
@@ -108,7 +124,7 @@ const HomePage = () => {
             className="flex justify-center sm:justify-start items-center gap-4 w-full"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, ease: "easeOut" }}
+            transition={{ ...smoothSpring, delay: 0.5 }}
             viewport={{ once: true, amount: 0.2 }}
           >
             <a
@@ -136,7 +152,7 @@ const HomePage = () => {
           className="hidden md:block relative w-72 h-72 md:w-80 md:h-80"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ ...gentleSpring, delay: 0.2 }}
           viewport={{ once: true, amount: 0.2 }}
         >
           <img

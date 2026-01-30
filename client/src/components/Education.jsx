@@ -33,7 +33,7 @@ const Education = () => {
             dateEnd="Present"
             info="Bachelor of Technology - B.Tech, Computer Science"
             location="Jaipur"
-            cgpa="7.20"
+            cgpa="7.63"
             Logo={FaUniversity}
             gpa="CGPA"
           />

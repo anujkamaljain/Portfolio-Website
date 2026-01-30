@@ -23,16 +23,28 @@ const timelineData = [
     year: "2025",
     title: "Completed 2nd Year & Landed an Internship",
     description:
-      'Completed 2nd year with a SGPA of "7.39" in the 3rd semester and "8.10" in the 4th semester, resulting in a cumulative CGPA of "7.20". While sharpening my full-stack development and DSA skills, I successfully landed an internship at Altruist Technologies Pvt. Ltd. as a Technical Intern working with the web development team — marking the start of my professional journey.',
+      'Completed 2nd year with a SGPA of "7.39" in the 3rd semester and "8.10" in the 4th semester, resulting in a cumulative CGPA of "7.20". While sharpening my full-stack development and DSA skills, I successfully landed an internship at Altruist Technologies Pvt. Ltd. as a Technical Intern working with the web development team  -  marking the start of my professional journey.',
+  },
+  {
+    year: "2026",
+    title: "5th Sem Completed & Multiple Internships",
+    description:
+      'Completed my 5th semester with an impressive SGPA of "8.91", raising my cumulative CGPA to "7.63". Secured Top 10 among 4,500+ teams at the Google Cloud Gen AI Exchange Hackathon with Zephyra. Currently working as a Full Stack Developer at Kritu Capital while continuing to build impactful projects.',
   },
 ];
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0, y: 40 },
   visible: (i) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.2, duration: 0.6, ease: "easeOut" },
+    transition: {
+      delay: i * 0.15,
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
+      mass: 0.5,
+    },
   }),
 };
 
@@ -67,9 +79,8 @@ const Timeline = () => {
           </div>
 
           <div
-            className={`${
-              idx % 2 === 0 ? "timeline-start md:text-end" : "timeline-end"
-            } mb-16 px-2 sm:px-4`}
+            className={`${idx % 2 === 0 ? "timeline-start md:text-end" : "timeline-end"
+              } mb-16 px-2 sm:px-4`}
           >
             <time className="font-mono italic text-sm text-primary">
               {item.year}

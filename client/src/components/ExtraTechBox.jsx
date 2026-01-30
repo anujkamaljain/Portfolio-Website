@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  SiAmazonwebservices,
+  SiGooglecloud,
   SiGit,
   SiGithub,
   SiCplusplus,
@@ -55,14 +55,14 @@ const ExtraTechBox = () => {
           <span className="ml-3 font-semibold text-lg">DaisyUI</span>
         </div>
 
-        <div className="btn w-full h-16 justify-start bg-gradient-to-r from-yellow-600 to-orange-500 text-white shadow-lg hover:scale-105 transition duration-300 ease-in-out rounded-2xl">
+        <div className="btn w-full h-16 justify-start bg-gradient-to-r from-blue-500 to-sky-400 text-white shadow-lg hover:scale-105 transition duration-300 ease-in-out rounded-2xl">
           <motion.div
             animate={{ scaleY: [1, 1.3, 1] }}
             transition={{ repeat: Infinity, duration: 2 }}
           >
-            <SiAmazonwebservices size={24} />
+            <SiGooglecloud size={24} />
           </motion.div>
-          <span className="ml-3 font-semibold text-lg">AWS</span>
+          <span className="ml-3 font-semibold text-lg">GCP</span>
         </div>
 
         <div className="btn w-full h-16 justify-start bg-gradient-to-r from-sky-600 to-cyan-500 text-white shadow-lg hover:scale-105 transition duration-300 ease-in-out rounded-2xl">
