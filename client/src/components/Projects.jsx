@@ -64,7 +64,7 @@ const Projects = () => {
                 </p>
                 <div className="card-actions justify-end mt-4 gap-2">
                   <a
-                    href="https://zephyra.myprojectss.info/"
+                    href="https://zephyra.anujprojects.in/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn badge badge-outline border-green-400 text-green-600 hover:bg-green-100 transition"
@@ -104,7 +104,7 @@ const Projects = () => {
                 </p>
                 <div className="card-actions justify-end mt-4 gap-2">
                   <a
-                    href="https://lnmcms.myprojectss.info/"
+                    href="https://www.lnmcms.in/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn badge badge-outline border-green-400 text-green-600 hover:bg-green-100 transition"
