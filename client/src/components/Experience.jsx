@@ -38,7 +38,7 @@ const Experience = () => {
             name={"Kritu Capital"}
             title={"Full Stack Web Developer"}
             dateStart={"Dec 2025"}
-            dateEnd={"Present"}
+            dateEnd={"Feb 2026"}
             techstack={["Next.js", "React.js", "Node.js", "MongoDB", "Express.js", "GCP", "Vercel"]}
             info={
               "Working as a Remote Full Stack Web Developer at an early stage startup, taking end-to-end ownership of product development. Designing and developing scalable web applications, handling architecture, feature implementation, API integration, and production deployments."
